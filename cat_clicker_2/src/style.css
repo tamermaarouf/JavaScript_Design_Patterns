@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  #container {
+    width: 100%;
+  }
+  
+  .cat {
+    float: left;
+    margin-right: 10px;
+    width: calc((100% - 10px) / 2);
+    text-align: center;
+  }
+  
+  .cat img {
+    width: 100%;
+  }
+  
+  .right {
+    margin-right: 0;
+  }
+  
+
+  
