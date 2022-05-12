@@ -68,17 +68,22 @@ const octopus = {
 
 const catView = {
   init: function () {
+    // store pointers to our DOM elements for easy access later
     this.catElem = document.getElementById("cat");
-    this.catName = document.getElementById('cat_name');
+    this.catName = document.getElementById("cat_name");
     this.catImageElem = document.getElementById("cat_img");
-    this.catCount = document.getElementById('cat_count');
+    this.catCount = document.getElementById("cat_count");
+
     // on click, increment the current cat's counter
-    this.catImageElem.addEventListener('click', function () {
+    this.catImageElem.addEventListener("click", function () {
       octopus.incrementCounter();
     });
+
+    // render this view (update the DOM elements with the right values)
     this.render();
   },
   render: function () {
+    // update the DOM elements with values from the current cat
     const currentCat = octopus.getCurrentCat();
     this.catName.textContent = currentCat.title;
     this.catImageElem.src = currentCat.src;
@@ -94,7 +99,7 @@ const catListView = {
   render: function () {
     // get the cats we'll be rendering from the octopus
     this.Cats = octopus.getCats();
-    this.catList.innerHTML = '';
+    this.catList.innerHTML = "";
     // Let's loop over the Cats in our array
     this.Cats.forEach((cat) => {
       // We're creating a DOM element for the Cat
@@ -119,4 +124,5 @@ const catListView = {
   },
 };
 
+// go octopus!
 octopus.init();
