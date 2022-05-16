@@ -49,10 +49,12 @@ const octopus = {
   // increments the counter for the currently-selected student
   incrementdayMissed: function (current) {
     model.currentStudent.daysMissed++;
+    missedColView.init();
   },
   // increments the counter for the currently-selected student
   decrementdayMissed: function (current) {
     model.currentStudent.daysMissed--;
+    missedColView.init();
   },
 };
 
@@ -124,11 +126,9 @@ const tableBodyView = {
               if (this.checked) {
                 octopus.setCurrentStudent(studentNameCopy);
                 octopus.incrementdayMissed(studentNameCopy);
-                missedColView.init();
               } else {
                 octopus.setCurrentStudent(studentNameCopy);
                 octopus.decrementdayMissed(studentNameCopy);
-                missedColView.init();
               }
             };
           })(studentName)
